@@ -1,0 +1,14 @@
+CAPI=2:
+name: icechips:ttl:74161:0.1.0
+
+filesets:
+  rtl:
+    files:
+      - source-7400/74161.v
+    file_type: verilogSource
+
+targets:
+  default:
+    filesets: [rtl]
+    # toplevel must match whatever module name is in 74161.v
+    toplevel: ttl_74161
