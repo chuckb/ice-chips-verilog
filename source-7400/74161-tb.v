@@ -4,7 +4,6 @@ module test;
 
 `TBASSERT_METHOD(tbassert)
 `TBASSERT_2_METHOD(tbassert2)
-`TBCLK_WAIT_TICK_METHOD(wait_tick)
 
 localparam WIDTH = 3;
 
@@ -15,6 +14,8 @@ reg ENT;
 reg ENP;
 reg [WIDTH-1:0] D;
 reg Clk;
+
+`TBCLK_WAIT_TICK_METHOD(wait_tick)
 
 // DUT outputs
 wire RCO;

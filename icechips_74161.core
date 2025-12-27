@@ -1,14 +1,32 @@
 CAPI=2:
 name: icechips:ttl:74161:0.1.0
 
+# Note: File order matters for iverilog! RTL must come last because
+# the testbench instantiates the DUT module, so the module must be
+# defined before instantiation. Iverilog processes files sequentially
+# and doesn't do multiple passes.
+# Macro dependencies must also be defined first.
+
 filesets:
   rtl:
     files:
       - source-7400/74161.v
     file_type: verilogSource
 
+  tb:
+    files:
+      - includes/helper.v
+      - includes/tbhelper.v
+      - source-7400/74161-tb.v
+    file_type: verilogSource
+
 targets:
   default:
     filesets: [rtl]
-    # toplevel must match whatever module name is in 74161.v
     toplevel: ttl_74161
+  sim:
+    filesets: [tb, rtl]
+    toplevel: test
+    default_tool: icarus
+    tools:
+      icarus: {iverilog_options: [-g2012]}
