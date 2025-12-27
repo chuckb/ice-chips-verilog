@@ -1,5 +1,5 @@
 CAPI=2:
-name: icechips:ttl:74161:0.9.2
+name: icechips:ttl:7410:0.9.2
 
 # Note: File order matters for iverilog! RTL must come last because
 # the testbench instantiates the DUT module, so the module must be
@@ -11,19 +11,19 @@ filesets:
   rtl:
     files:
       - includes/helper.v
-      - source-7400/74161.v
+      - source-7400/7410.v
     file_type: verilogSource
 
   tb:
     files:
       - includes/tbhelper.v
-      - source-7400/74161-tb.v
+      - source-7400/7410-tb.v
     file_type: verilogSource
 
 targets:
   default:
     filesets: [rtl]
-    toplevel: ttl_74161
+    toplevel: ttl_7410
   sim:
     filesets: [tb, rtl]
     toplevel: test

@@ -30,6 +30,7 @@ end
 //------------------------------------------------//
 
 `ASSIGN_UNPACK_ARRAY(BLOCKS, WIDTH_IN, A, A_2D)
-assign #(DELAY_RISE, DELAY_FALL) Y_2D = `PACK_ARRAY(BLOCKS, WIDTH_OUT, computed)
+`PACK_ARRAY(BLOCKS, WIDTH_OUT, computed)
+assign #(DELAY_RISE, DELAY_FALL) Y_2D = PK_OUT_BUS;
 
 endmodule

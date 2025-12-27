@@ -32,6 +32,7 @@ begin
 end
 //------------------------------------------------//
 
-assign #(DELAY_RISE, DELAY_FALL) Y_2D = `PACK_ARRAY(BLOCKS_DIFFERENT, WIDTH_OUT, computed)
+`PACK_ARRAY(BLOCKS_DIFFERENT, WIDTH_OUT, computed)
+assign #(DELAY_RISE, DELAY_FALL) Y_2D = PK_OUT_BUS;
 
 endmodule

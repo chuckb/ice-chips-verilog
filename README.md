@@ -14,6 +14,8 @@ IceChips is built to support the [Icestudio][link-icestudio] and [FPGAwars][link
 
 &ensp;&ensp;`<Open Hardware driven by Open Source>`
 
+[FuseSoC][link-fusesoc] ready
+
 ## Getting Started
 
 The easiest way to use these devices is [download the collection](../../releases/latest) and open it in the Icestudio design environment.
@@ -21,6 +23,9 @@ The easiest way to use these devices is [download the collection](../../releases
 In Icestudio, go to `Tools > Collections > Add` and select the downloaded .zip file. Place and wire up your components, run and test the result. There's a variety of ways to provide inputs and view outputs; but no need for actual parts, wires or power supply.
 
 Alternatively, you can download an individual device ([74xx.v file](source-7400/74153.v)) and use it in your own simulation in Verilog. This is the way to go if you wish to set the parameters for # bits, # inputs per gate, # blocks in a device.
+
+For FuseSoC, you must have FuseSoC in your path. Clone the repo. Execute `fusesoc library add <root directory of repo>`.
+To list all cores, `fusesoc list-cores`.
 
 See the Index to browse devices.
 
@@ -254,3 +259,4 @@ Marcus Lindholm · SVG graphic design help
 [link-iverilogs]: https://steveicarus.github.io/iverilog/usage/getting_started.html
 [link-gtkwavei]: http://gtkwave.sourceforge.net
 [link-gtkwaves]: https://gtkwave.sourceforge.net/gtkwave.pdf
+[link-fusesoc]: https://fusesoc.readthedocs.io/en/stable/
